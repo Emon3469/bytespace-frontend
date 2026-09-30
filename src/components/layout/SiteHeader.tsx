@@ -2,10 +2,18 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useId, useState } from "react";
+import { type ComponentProps, useEffect, useId, useState } from "react";
 import { Logo } from "@/components/ui/Logo";
 import { mainNav } from "@/data/site";
 import { cn } from "@/lib/cn";
+
+/**
+ * In-page anchors (e.g. "/#courses") use a native <a> so the browser scrolls
+ * immediately; real routes go through next/link for client-side navigation.
+ */
+function NavLink({ href, ...props }: ComponentProps<"a"> & { href: string }) {
+  return href.includes("#") ? <a href={href} {...props} /> : <Link href={href} {...props} />;
+}
 
 export function SiteHeader({ className }: { className?: string }) {
   const [open, setOpen] = useState(false);
@@ -28,7 +36,7 @@ export function SiteHeader({ className }: { className?: string }) {
   const close = () => setOpen(false);
 
   return (
-    <header className={cn("grid-lines relative z-30 bg-primary", className)}>
+    <header className={cn("relative z-30 bg-primary grid-lines", className)}>
       <div className="relative mx-auto h-[120px] w-full max-w-[1440px] max-lg:h-auto">
         {/* Desktop layout — absolute positions taken from the 1440 artboard */}
         <div className="max-lg:hidden">
@@ -38,7 +46,7 @@ export function SiteHeader({ className }: { className?: string }) {
             <ul className="flex items-start gap-6 whitespace-nowrap text-gray-50">
               {mainNav.map((item, i) => (
                 <li key={item.href}>
-                  <Link
+                  <NavLink
                     href={item.href}
                     aria-current={i === 0 ? "page" : undefined}
                     className={cn(
@@ -47,7 +55,7 @@ export function SiteHeader({ className }: { className?: string }) {
                     )}
                   >
                     {item.label}
-                  </Link>
+                  </NavLink>
                 </li>
               ))}
             </ul>
@@ -101,24 +109,29 @@ export function SiteHeader({ className }: { className?: string }) {
             </button>
           </div>
 
-          {/* Smooth expand/collapse via animating grid-template-rows 0fr → 1fr */}
+          {/* Overlay panel (never shifts page content). Expands/collapses smoothly by
+              transitioning clip-path, which needs no fixed height. */}
           <div
             id={menuId}
             className={cn(
-              "grid transition-[grid-template-rows,opacity] duration-300 ease-out",
-              open ? "grid-rows-[1fr] opacity-100" : "pointer-events-none grid-rows-[0fr] opacity-0",
+              "absolute inset-x-0 top-full duration-300 ease-out motion-reduce:transition-none",
+              open
+                ? // becomes visible instantly on open…
+                  "visible translate-y-0 opacity-100 [transition-property:clip-path,opacity,translate] [clip-path:inset(0_0_0_0)]"
+                : // …and stays visible until the closing animation has finished.
+                  "pointer-events-none invisible -translate-y-2 opacity-0 [transition-property:clip-path,opacity,translate,visibility] [clip-path:inset(0_0_100%_0)]",
             )}
             inert={!open}
           >
-            <div className="overflow-hidden">
+            <div>
               <nav
                 aria-label="Mobile"
-                className="mx-10 mb-6 rounded-panel bg-primary/95 p-2 ring-1 ring-white/15 backdrop-blur-md max-md:mx-4"
+                className="mx-10 mb-6 rounded-panel bg-primary p-2 shadow-2xl ring-1 ring-white/15 max-md:mx-4"
               >
                 <ul className="flex flex-col">
                   {mainNav.map((item, i) => (
                     <li key={item.href}>
-                      <Link
+                      <NavLink
                         href={item.href}
                         onClick={close}
                         aria-current={i === 0 ? "page" : undefined}
@@ -128,7 +141,7 @@ export function SiteHeader({ className }: { className?: string }) {
                         )}
                       >
                         {item.label}
-                      </Link>
+                      </NavLink>
                     </li>
                   ))}
                   <li className="my-2 h-px bg-white/15" aria-hidden />
