@@ -20,6 +20,8 @@ type OrnamentProps = {
   name: OrnamentName;
   /** Rendered square size in px at the 1440 artboard. */
   size: number;
+  /** Load immediately (above-the-fold hero shapes) instead of lazily. */
+  eager?: boolean;
   className?: string;
 };
 
@@ -28,12 +30,13 @@ type OrnamentProps = {
  * same hard-light colour overlay Figma applies, so they keep their transparency.
  * Position is supplied by the caller through `className`.
  */
-export function Ornament({ name, size, className }: OrnamentProps) {
+export function Ornament({ name, size, eager = false, className }: OrnamentProps) {
   return (
     <Image
       src={`/images/ornaments/${name}.png`}
       alt=""
       aria-hidden
+      loading={eager ? "eager" : "lazy"}
       width={size}
       height={size}
       sizes={`${size}px`}

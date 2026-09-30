@@ -46,14 +46,12 @@ export function Hero() {
       </div>
 
       {/* Illustration stage (artboard y 512 → 1024) */}
-      <div
-        className="relative mt-[-2px] h-[calc(512px*var(--k))] animate-fade-up [animation-delay:320ms] max-lg:mt-10"
-        aria-hidden
-      >
+      <div className="relative mt-[-2px] h-[calc(512px*var(--k))] max-lg:mt-10" aria-hidden>
         <div className="absolute top-0 left-1/2 h-[512px] w-[1440px] origin-top -translate-x-1/2 scale-(--k)">
           <Image
             src="/images/decor/hero-ring.svg"
             alt=""
+            loading="eager"
             width={1149}
             height={1149}
             className="absolute top-[70px] left-[calc(50%-0.5px)] size-[1149px] max-w-none -translate-x-1/2"
@@ -75,38 +73,38 @@ export function Hero() {
           </Place>
 
           <Place x={1127} y={672 - STAGE_Y} className="animate-float [animation-duration:8s]">
-            <Ornament name="coil-a-white" size={330} />
+            <Ornament eager name="coil-a-white" size={330} />
           </Place>
           <Place
             x={-118}
             y={221 - STAGE_Y}
             className="animate-float [animation-delay:-2s] [animation-duration:9s] max-lg:hidden"
           >
-            <Ornament name="coil-b-lime" size={385} />
+            <Ornament eager name="coil-b-lime" size={385} />
           </Place>
           <Place
             x={183}
             y={477 - STAGE_Y}
             className="animate-float [animation-delay:-4s] [animation-duration:7s] max-md:hidden"
           >
-            <Ornament name="coil-b-white-flip" size={175} />
+            <Ornament eager name="coil-b-white-flip" size={175} />
           </Place>
           <Place x={18} y={682 - STAGE_Y} className="animate-float [animation-delay:-5s] [animation-duration:10s]">
-            <Ornament name="torus-white" size={342} />
+            <Ornament eager name="torus-white" size={342} />
           </Place>
           <Place
             x={1231}
             y={221 - STAGE_Y}
             className="animate-float [animation-delay:-6s] [animation-duration:9s] max-lg:hidden"
           >
-            <Ornament name="cylinder-lime" size={370} />
+            <Ornament eager name="cylinder-lime" size={370} />
           </Place>
           <Place
             x={1106}
             y={464 - STAGE_Y}
             className="animate-float [animation-delay:-2.5s] [animation-duration:7s] max-md:hidden"
           >
-            <Ornament name="cone-white" size={188} />
+            <Ornament eager name="cone-white" size={188} />
           </Place>
 
           <Place x={404} y={639 - STAGE_Y} className="animate-float [animation-delay:-4.5s]">
