@@ -17,7 +17,11 @@ export default function RegisterPage() {
       <AuthCard
         eyebrow="Create an Account"
         title="Welcome to ByteSpace"
-        footer={{ prompt: "Already have an account?", linkLabel: "Login", href: "/login" }}
+        footer={{
+          prompt: "Already have an account?",
+          linkLabel: "Login",
+          href: "/login",
+        }}
         className="pb-[51px]"
       >
         <RegisterForm />

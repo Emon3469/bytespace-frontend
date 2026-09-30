@@ -16,7 +16,7 @@ export function AuthCard({ eyebrow, title, children, footer, className }: AuthCa
     <section
       aria-labelledby="auth-title"
       className={cn(
-        "flex h-[784px] flex-col justify-between rounded-card bg-white px-[63px] pt-[61px] max-xl:h-auto max-xl:gap-12 max-md:px-6 max-md:py-10",
+        "flex h-[784px] flex-col justify-between rounded-card bg-white px-[63px] pt-[61px] max-md:px-6 max-md:py-10 max-xl:h-auto max-xl:gap-12",
         className,
       )}
     >

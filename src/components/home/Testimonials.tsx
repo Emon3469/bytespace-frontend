@@ -28,10 +28,10 @@ export function Testimonials() {
       <Glow color="blue" opacity={0.24} className="top-[149px] left-[calc(50%-1162px)] size-[1137px]" />
 
       <div className="mx-auto w-[1204px] max-w-full max-lg:px-10 max-md:px-4">
-        <div className="reveal flex items-end justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-6">
+        <div className="flex reveal items-end justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-6">
           <h2
             id="testimonials-title"
-            className="font-display w-[577px] max-w-full text-heading-m font-semibold text-black max-md:text-[32px]"
+            className="w-[577px] max-w-full font-display text-heading-m font-semibold text-black max-md:text-[32px]"
           >
             Discover What Our Community Is Saying
           </h2>

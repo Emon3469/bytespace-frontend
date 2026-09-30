@@ -12,7 +12,7 @@ export function Field({ label, name, id, ...inputProps }: FieldProps) {
       <input
         id={inputId}
         name={name}
-        className="h-[52px] w-full rounded-pill border border-gray-200 bg-white px-6 font-sans text-body-l text-gray-950 transition-colors outline-none placeholder:text-gray-400 hover:border-gray-400 focus:border-primary user-invalid:border-red-500"
+        className="h-[52px] w-full rounded-pill border border-gray-200 bg-white px-6 font-sans text-body-l text-gray-950 transition-colors outline-none placeholder:text-gray-400 user-invalid:border-red-500 hover:border-gray-400 focus:border-primary"
         {...inputProps}
       />
     </div>

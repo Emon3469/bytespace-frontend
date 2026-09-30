@@ -21,7 +21,7 @@ export function LearningPaths() {
           <li key={path.label} className="reveal">
             <a
               href="#courses"
-              className="flex size-[167px] flex-col items-center justify-center gap-3 rounded-card border border-gray-200 transition-colors duration-200 hover:border-primary max-md:size-auto max-md:aspect-square max-md:w-full"
+              className="flex size-[167px] flex-col items-center justify-center gap-3 rounded-card border border-gray-200 transition-colors duration-200 hover:border-primary max-md:aspect-square max-md:size-auto max-md:w-full"
             >
               <span className="flex items-center justify-center rounded-[40px] bg-lime p-3">
                 <Image src={path.icon} alt="" width={36} height={36} className="size-9" />

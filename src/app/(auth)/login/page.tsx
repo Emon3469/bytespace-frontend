@@ -17,7 +17,11 @@ export default function LoginPage() {
       <AuthCard
         eyebrow="Sign In"
         title="Welcome Back"
-        footer={{ prompt: "New user?", linkLabel: "Create an account", href: "/register" }}
+        footer={{
+          prompt: "New user?",
+          linkLabel: "Create an account",
+          href: "/register",
+        }}
         className="pb-10"
       >
         <LoginForm />

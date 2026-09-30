@@ -11,13 +11,13 @@ export function Hero() {
   return (
     <section
       aria-labelledby="hero-title"
-      className="grid-lines relative isolate h-[904px] overflow-hidden bg-primary [--k:1] max-lg:h-auto max-lg:[--k:0.72] max-md:[--k:0.5] max-[480px]:[--k:0.44]"
+      className="relative isolate h-[904px] overflow-hidden bg-primary grid-lines [--k:1] max-lg:h-auto max-lg:[--k:0.72] max-md:[--k:0.5] max-[480px]:[--k:0.44]"
     >
       <div className="relative z-10 mx-auto mt-[49px] flex w-full max-w-[1200px] flex-col items-center gap-[60px] max-lg:mt-6 max-lg:gap-10 max-lg:px-10 max-md:px-4">
         <div className="flex w-full flex-col items-center gap-8 text-center max-md:gap-5">
           <h1
             id="hero-title"
-            className="font-display animate-fade-up w-[935px] max-w-full text-heading-l font-semibold text-white max-lg:text-[56px] max-md:text-[36px]"
+            className="w-[935px] max-w-full animate-fade-up font-display text-heading-l font-semibold text-white max-lg:text-[56px] max-md:text-[36px]"
           >
             Get Access to Hundreds Courses Available
           </h1>
@@ -29,7 +29,7 @@ export function Hero() {
         <form
           role="search"
           action="/"
-          className="animate-fade-up flex items-start gap-4 [animation-delay:240ms] max-md:w-full max-md:flex-col max-md:items-stretch max-md:gap-3"
+          className="flex animate-fade-up items-start gap-4 [animation-delay:240ms] max-md:w-full max-md:flex-col max-md:items-stretch max-md:gap-3"
         >
           <label className="flex h-[52px] w-[461px] items-center gap-2 rounded-pill bg-white px-6 py-3 max-md:w-full">
             <Image src="/images/icons/search.svg" alt="" width={24} height={24} className="size-6 shrink-0" />
@@ -47,7 +47,7 @@ export function Hero() {
 
       {/* Illustration stage (artboard y 512 → 1024) */}
       <div
-        className="animate-fade-up relative mt-[-2px] h-[calc(512px*var(--k))] [animation-delay:320ms] max-lg:mt-10"
+        className="relative mt-[-2px] h-[calc(512px*var(--k))] animate-fade-up [animation-delay:320ms] max-lg:mt-10"
         aria-hidden
       >
         <div className="absolute top-0 left-1/2 h-[512px] w-[1440px] origin-top -translate-x-1/2 scale-(--k)">
@@ -80,31 +80,31 @@ export function Hero() {
           <Place
             x={-118}
             y={221 - STAGE_Y}
-            className="animate-float [animation-duration:9s] [animation-delay:-2s] max-lg:hidden"
+            className="animate-float [animation-delay:-2s] [animation-duration:9s] max-lg:hidden"
           >
             <Ornament name="coil-b-lime" size={385} />
           </Place>
           <Place
             x={183}
             y={477 - STAGE_Y}
-            className="animate-float [animation-duration:7s] [animation-delay:-4s] max-md:hidden"
+            className="animate-float [animation-delay:-4s] [animation-duration:7s] max-md:hidden"
           >
             <Ornament name="coil-b-white-flip" size={175} />
           </Place>
-          <Place x={18} y={682 - STAGE_Y} className="animate-float [animation-duration:10s] [animation-delay:-5s]">
+          <Place x={18} y={682 - STAGE_Y} className="animate-float [animation-delay:-5s] [animation-duration:10s]">
             <Ornament name="torus-white" size={342} />
           </Place>
           <Place
             x={1231}
             y={221 - STAGE_Y}
-            className="animate-float [animation-duration:9s] [animation-delay:-6s] max-lg:hidden"
+            className="animate-float [animation-delay:-6s] [animation-duration:9s] max-lg:hidden"
           >
             <Ornament name="cylinder-lime" size={370} />
           </Place>
           <Place
             x={1106}
             y={464 - STAGE_Y}
-            className="animate-float [animation-duration:7s] [animation-delay:-2.5s] max-md:hidden"
+            className="animate-float [animation-delay:-2.5s] [animation-duration:7s] max-md:hidden"
           >
             <Ornament name="cone-white" size={188} />
           </Place>

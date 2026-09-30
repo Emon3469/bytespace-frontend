@@ -19,7 +19,10 @@ function Illustration({ width, height, children }: { width: number; height: numb
     <div
       aria-hidden
       className="relative shrink-0 [--k:1] max-md:[--k:0.56] max-[400px]:[--k:0.5]"
-      style={{ width: `calc(${width}px * var(--k))`, height: `calc(${height}px * var(--k))` }}
+      style={{
+        width: `calc(${width}px * var(--k))`,
+        height: `calc(${height}px * var(--k))`,
+      }}
     >
       <div className="absolute top-0 left-0 origin-top-left scale-(--k)" style={{ width, height }}>
         {children}
@@ -56,9 +59,9 @@ export function GrowthSection() {
 
       <div className="container-page flex flex-col gap-[72px] pt-[120px] pl-[121px] max-lg:gap-20 max-lg:pt-0 max-lg:pl-10 max-md:pl-4">
         {/* Row 1 — Professional growth */}
-        <div className="reveal flex items-center gap-[63px] max-lg:flex-col max-lg:gap-12">
+        <div className="flex reveal items-center gap-[63px] max-lg:flex-col max-lg:gap-12">
           <div className="flex w-[574px] max-w-full flex-col gap-10 max-md:gap-6">
-            <h2 className="font-display w-[577px] max-w-full text-heading-m font-semibold text-gray-950 max-md:text-[32px]">
+            <h2 className="w-[577px] max-w-full font-display text-heading-m font-semibold text-gray-950 max-md:text-[32px]">
               Your Path to Professional Growth Starts Here!
             </h2>
             <p className="w-[477px] max-w-full font-sans text-body-l text-gray-700 max-md:text-[16px]">
@@ -86,19 +89,19 @@ export function GrowthSection() {
               width={577}
               height={540}
               sizes="577px"
-              className="drop-shadow-float absolute top-3 left-0 h-[540px] w-[577px] max-w-none object-cover"
+              className="absolute top-3 left-0 h-[540px] w-[577px] max-w-none object-cover drop-shadow-float"
             />
             <div className="absolute" style={at(345, 213)}>
               <LearningProgressCard relaxed />
             </div>
-            <div className="animate-float absolute [animation-duration:7s]" style={at(406, 67)}>
+            <div className="absolute animate-float [animation-duration:7s]" style={at(406, 67)}>
               <Ornament name="coil-a-lime" size={215} />
             </div>
           </Illustration>
         </div>
 
         {/* Row 2 — Creators */}
-        <div className="reveal flex items-center gap-[79px] max-lg:flex-col-reverse max-lg:gap-12">
+        <div className="flex reveal items-center gap-[79px] max-lg:flex-col-reverse max-lg:gap-12">
           <Illustration width={541} height={596}>
             <div className="absolute" style={at(0, 44)}>
               <RevenueCard title="Total Revenue" period="July 1-28" value="$120.29" layout="inline" />
@@ -112,7 +115,7 @@ export function GrowthSection() {
                 className="w-[134px]"
               />
             </div>
-            <div className="drop-shadow-float absolute top-0 left-[28px] h-[596px] w-[435px]">
+            <div className="absolute top-0 left-[28px] h-[596px] w-[435px] drop-shadow-float">
               <div className="relative size-full overflow-hidden">
                 <Image
                   src="/images/hero/creator-headphones.png"
@@ -127,13 +130,13 @@ export function GrowthSection() {
             <div className="absolute" style={at(283, 413)}>
               <HappyStudentsCard variant="compact" />
             </div>
-            <div className="animate-float absolute [animation-duration:8s] [animation-delay:-3s]" style={at(305, 114)}>
+            <div className="absolute animate-float [animation-delay:-3s] [animation-duration:8s]" style={at(305, 114)}>
               <Ornament name="coil-b-lime" size={215} />
             </div>
           </Illustration>
 
           <div className="flex w-[580px] max-w-full flex-col gap-10 max-md:gap-6">
-            <h2 className="font-display w-[391px] max-w-full text-heading-m font-semibold text-gray-950 max-md:text-[32px]">
+            <h2 className="w-[391px] max-w-full font-display text-heading-m font-semibold text-gray-950 max-md:text-[32px]">
               Create &amp; Manage Courses Easily.
             </h2>
             <p className="w-[574px] max-w-full font-sans text-body-l text-gray-700 max-md:text-[16px]">

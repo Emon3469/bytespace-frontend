@@ -14,8 +14,8 @@ type AuthLayoutProps = {
  */
 export function AuthLayout({ intro, children }: AuthLayoutProps) {
   return (
-    <div className="grid-lines min-h-dvh overflow-hidden bg-primary">
-      <div className="relative mx-auto h-[1024px] w-[1198px] max-xl:flex max-xl:h-auto max-xl:w-full max-xl:max-w-[659px] max-xl:flex-col max-xl:items-center max-xl:px-10 max-xl:pb-20 max-md:px-4 max-md:pb-10">
+    <div className="min-h-dvh overflow-hidden bg-primary grid-lines">
+      <div className="relative mx-auto h-[1024px] w-[1198px] max-md:px-4 max-md:pb-10 max-xl:flex max-xl:h-auto max-xl:w-full max-xl:max-w-[659px] max-xl:flex-col max-xl:items-center max-xl:px-10 max-xl:pb-20">
         <header className="absolute top-[35px] left-px max-xl:static max-xl:self-start max-xl:py-8">
           <Logo markOnly />
         </header>
@@ -25,11 +25,11 @@ export function AuthLayout({ intro, children }: AuthLayoutProps) {
           <p className="font-sans text-body-l text-gray-100 max-md:text-[16px]">{intro.description}</p>
         </div>
 
-        <main className="absolute top-[120px] left-[620px] w-[579px] max-xl:static max-xl:order-3 max-xl:w-full max-md:mt-8">
+        <main className="absolute top-[120px] left-[620px] w-[579px] max-md:mt-8 max-xl:static max-xl:order-3 max-xl:w-full">
           {children}
         </main>
 
-        <div className="absolute top-[305px] left-[-24px] max-xl:relative max-xl:order-2 max-xl:top-auto max-xl:left-auto max-xl:my-10 max-xl:h-[calc(585px*0.8)] max-xl:w-[calc(723px*0.8)] max-md:hidden">
+        <div className="absolute top-[305px] left-[-24px] max-md:hidden max-xl:relative max-xl:top-auto max-xl:left-auto max-xl:order-2 max-xl:my-10 max-xl:h-[calc(585px*0.8)] max-xl:w-[calc(723px*0.8)]">
           <div className="origin-top-left max-xl:scale-80">
             <AuthShowcase />
           </div>

@@ -70,7 +70,7 @@ export function CourseCard({
           <div className="flex min-w-0 flex-col">
             <Heading
               className={cn(
-                "font-display max-w-[280px] truncate text-heading-xs font-semibold text-black",
+                "max-w-[280px] truncate font-display text-heading-xs font-semibold text-black",
                 relaxed && "leading-[28px]",
               )}
               title={course.title}
@@ -99,7 +99,7 @@ export function CourseCard({
           </div>
 
           <p className="flex items-end">
-            <span className="font-display h-6 text-heading-xs font-semibold text-primary">${course.price}</span>
+            <span className="h-6 font-display text-heading-xs font-semibold text-primary">${course.price}</span>
             <span className={cn("font-sans text-body-xs text-neutral-700", relaxed && "leading-5")}>/lifetime</span>
           </p>
         </div>

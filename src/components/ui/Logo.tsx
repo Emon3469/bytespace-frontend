@@ -22,7 +22,7 @@ export function Logo({ tone = "light", markOnly = false, className }: LogoProps)
       {!markOnly && (
         <span
           className={cn(
-            "font-brand mt-[7px] text-[24px] leading-[30px] font-bold whitespace-nowrap",
+            "mt-[7px] font-brand text-[24px] leading-[30px] font-bold whitespace-nowrap",
             tone === "light" ? "text-gray-50" : "text-gray-950",
           )}
         >

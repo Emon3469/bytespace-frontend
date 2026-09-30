@@ -21,7 +21,7 @@ export function LearningProgressCard({ className, relaxed = false }: { className
       <p className={cn("font-sans text-label-s font-medium text-gray-950", relaxed && "leading-6")}>
         Learning Progress
       </p>
-      <p className="font-display w-[200px] text-stat font-semibold text-gray-950">55%</p>
+      <p className="w-[200px] font-display text-stat font-semibold text-gray-950">55%</p>
       <ProgressBar />
     </div>
   );

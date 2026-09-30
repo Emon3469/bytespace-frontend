@@ -2,7 +2,13 @@ import { ButtonLink } from "@/components/ui/Button";
 import { Ornament, type OrnamentName } from "@/components/ui/Ornament";
 import { Place } from "@/components/ui/Place";
 
-const ornaments: Array<{ name: OrnamentName; size: number; x: number; y: number; mobile?: boolean }> = [
+const ornaments: Array<{
+  name: OrnamentName;
+  size: number;
+  x: number;
+  y: number;
+  mobile?: boolean;
+}> = [
   { name: "cone-lime", size: 188, x: 1080, y: 0 },
   { name: "coil-a-lime", size: 330, x: 1110, y: 289, mobile: true },
   { name: "coil-b-lime", size: 385, x: -118, y: -162, mobile: true },
@@ -17,12 +23,12 @@ export function CreatorCta() {
     <section
       id="creators"
       aria-labelledby="cta-title"
-      className="grid-lines relative isolate h-[488px] overflow-hidden bg-primary max-lg:h-auto max-lg:py-24 max-md:py-20"
+      className="relative isolate h-[488px] overflow-hidden bg-primary grid-lines max-lg:h-auto max-lg:py-24 max-md:py-20"
     >
-      <div className="reveal relative mx-auto flex w-[964px] max-w-full flex-col items-center gap-10 pt-[85px] text-center max-lg:px-10 max-lg:pt-0 max-md:gap-6 max-md:px-4">
+      <div className="relative mx-auto flex w-[964px] max-w-full reveal flex-col items-center gap-10 pt-[85px] text-center max-lg:px-10 max-lg:pt-0 max-md:gap-6 max-md:px-4">
         <h2
           id="cta-title"
-          className="font-display w-[710px] max-w-full text-heading-m font-semibold text-gray-50 max-md:text-[32px]"
+          className="w-[710px] max-w-full font-display text-heading-m font-semibold text-gray-50 max-md:text-[32px]"
         >
           Unlock Your Potential as a Creator with ByteSpace
         </h2>
@@ -41,7 +47,10 @@ export function CreatorCta() {
             x={o.x}
             y={o.y}
             className={`animate-float ${o.mobile ? "" : "max-md:hidden"}`}
-            style={{ animationDuration: `${7 + (i % 3)}s`, animationDelay: `${-i * 1.3}s` }}
+            style={{
+              animationDuration: `${7 + (i % 3)}s`,
+              animationDelay: `${-i * 1.3}s`,
+            }}
           >
             <Ornament name={o.name} size={o.size} />
           </Place>
