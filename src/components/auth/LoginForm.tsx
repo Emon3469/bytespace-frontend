@@ -2,7 +2,12 @@
 
 import { Button } from "@/components/ui/Button";
 import { Field } from "./Field";
-import { useAuthSubmit } from "./useAuthSubmit";
+import { useActionState } from "react";
+import { signIn } from "@/app/(auth)/actions";
+import type { AuthFormState } from "@/lib/auth-validation";
+import { FormError } from "./FormError";
+
+const initialState: AuthFormState = { error: null };
 
 function FacebookIcon() {
   return (
@@ -24,11 +29,11 @@ const socialButton =
   "flex size-[72px] items-center justify-center rounded-panel border border-gray-200 bg-white transition-colors hover:border-gray-400";
 
 export function LoginForm() {
-  const { pending, onSubmit } = useAuthSubmit();
+  const [state, formAction, pending] = useActionState(signIn, initialState);
 
   return (
     <div className="flex flex-col">
-      <form onSubmit={onSubmit} className="flex flex-col items-end gap-6" aria-busy={pending}>
+      <form action={formAction} className="flex flex-col items-end gap-6" aria-busy={pending}>
         <div className="flex w-full flex-col gap-6">
           <Field
             label="Email"
@@ -47,6 +52,7 @@ export function LoginForm() {
             required
           />
         </div>
+        <FormError message={state.error} />
         <Button type="submit" disabled={pending}>
           {pending ? "Signing in…" : "Sign In"}
         </Button>
