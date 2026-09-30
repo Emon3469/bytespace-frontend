@@ -21,8 +21,8 @@ describe("content & assets", () => {
     expect(srcs.filter((s) => !exists(s))).toEqual([]);
   });
 
-  it("ships all 12 ornament renders", () => {
-    expect(readdirSync(join(publicDir, "images/ornaments"))).toHaveLength(12);
+  it("ships all 11 ornament renders", () => {
+    expect(readdirSync(join(publicDir, "images/ornaments"))).toHaveLength(11);
   });
 
   it("gives each course a unique id and descriptive alt text", () => {

@@ -9,7 +9,6 @@ export type OrnamentName =
   | "coil-b-white-flip"
   | "cone-lime"
   | "cone-white"
-  | "cone2-lime"
   | "cone2-white"
   | "cylinder-lime"
   | "cylinder-white"
