@@ -24,8 +24,8 @@ export function FeaturedCourses() {
 
       <ul className="mt-[77px] grid grid-cols-[repeat(3,373px)] gap-10 max-lg:justify-center max-lg:mt-12 max-lg:grid-cols-[repeat(2,minmax(0,373px))] max-lg:gap-6 max-md:grid-cols-[minmax(0,373px)] max-md:mt-10">
         {featuredCourses.map((course) => (
-          <li key={course.id}>
-            <CourseCard course={course} className="max-lg:w-full" />
+          <li key={course.id} className="reveal">
+            <CourseCard course={course} interactive className="max-lg:w-full" />
           </li>
         ))}
       </ul>

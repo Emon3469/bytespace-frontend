@@ -13,7 +13,7 @@ type SectionHeadingProps = {
 
 export function SectionHeading({ id, title, description, size = "m", titleClassName, className }: SectionHeadingProps) {
   return (
-    <div className={cn("mx-auto flex w-[917px] max-w-full flex-col items-center gap-4 text-center", className)}>
+    <div className={cn("reveal mx-auto flex w-[917px] max-w-full flex-col items-center gap-4 text-center", className)}>
       <h2
         id={id}
         className={cn(

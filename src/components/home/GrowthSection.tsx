@@ -56,7 +56,7 @@ export function GrowthSection() {
 
       <div className="container-page flex flex-col gap-[72px] pt-[120px] pl-[121px] max-lg:gap-20 max-lg:pt-0 max-lg:pl-10 max-md:pl-4">
         {/* Row 1 — Professional growth */}
-        <div className="flex items-center gap-[63px] max-lg:flex-col max-lg:gap-12">
+        <div className="reveal flex items-center gap-[63px] max-lg:flex-col max-lg:gap-12">
           <div className="flex w-[574px] max-w-full flex-col gap-10 max-md:gap-6">
             <h2 className="font-display w-[577px] max-w-full text-heading-m font-semibold text-gray-950 max-md:text-[32px]">
               Your Path to Professional Growth Starts Here!
@@ -91,14 +91,14 @@ export function GrowthSection() {
             <div className="absolute" style={at(345, 213)}>
               <LearningProgressCard relaxed />
             </div>
-            <div className="absolute" style={at(406, 67)}>
+            <div className="animate-float absolute [animation-duration:7s]" style={at(406, 67)}>
               <Ornament name="coil-a-lime" size={215} />
             </div>
           </Illustration>
         </div>
 
         {/* Row 2 — Creators */}
-        <div className="flex items-center gap-[79px] max-lg:flex-col-reverse max-lg:gap-12">
+        <div className="reveal flex items-center gap-[79px] max-lg:flex-col-reverse max-lg:gap-12">
           <Illustration width={541} height={596}>
             <div className="absolute" style={at(0, 44)}>
               <RevenueCard title="Total Revenue" period="July 1-28" value="$120.29" layout="inline" />
@@ -127,7 +127,7 @@ export function GrowthSection() {
             <div className="absolute" style={at(283, 413)}>
               <HappyStudentsCard variant="compact" />
             </div>
-            <div className="absolute" style={at(305, 114)}>
+            <div className="animate-float absolute [animation-duration:8s] [animation-delay:-3s]" style={at(305, 114)}>
               <Ornament name="coil-b-lime" size={215} />
             </div>
           </Illustration>

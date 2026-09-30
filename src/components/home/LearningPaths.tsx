@@ -18,7 +18,7 @@ export function LearningPaths() {
 
       <ul className="mt-[68px] flex justify-center gap-10 max-lg:mt-12 max-lg:grid max-lg:grid-cols-[repeat(3,167px)] max-lg:gap-6 max-md:grid-cols-[repeat(2,minmax(0,167px))] max-md:gap-4">
         {learningPaths.map((path) => (
-          <li key={path.label}>
+          <li key={path.label} className="reveal">
             <a
               href="#courses"
               className="flex size-[167px] flex-col items-center justify-center gap-3 rounded-card border border-gray-200 transition-colors duration-200 hover:border-primary max-md:size-auto max-md:aspect-square max-md:w-full"

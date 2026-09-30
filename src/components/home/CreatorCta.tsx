@@ -19,7 +19,7 @@ export function CreatorCta() {
       aria-labelledby="cta-title"
       className="grid-lines relative isolate h-[488px] overflow-hidden bg-primary max-lg:h-auto max-lg:py-24 max-md:py-20"
     >
-      <div className="relative mx-auto flex w-[964px] max-w-full flex-col items-center gap-10 pt-[85px] text-center max-lg:px-10 max-lg:pt-0 max-md:gap-6 max-md:px-4">
+      <div className="reveal relative mx-auto flex w-[964px] max-w-full flex-col items-center gap-10 pt-[85px] text-center max-lg:px-10 max-lg:pt-0 max-md:gap-6 max-md:px-4">
         <h2
           id="cta-title"
           className="font-display w-[710px] max-w-full text-heading-m font-semibold text-gray-50 max-md:text-[32px]"
@@ -35,8 +35,14 @@ export function CreatorCta() {
       </div>
 
       <div aria-hidden className="pointer-events-none absolute inset-0 max-lg:-z-10 max-md:[--orn-scale:0.5]">
-        {ornaments.map((o) => (
-          <Place key={o.name} x={o.x} y={o.y} className={o.mobile ? undefined : "max-md:hidden"}>
+        {ornaments.map((o, i) => (
+          <Place
+            key={o.name}
+            x={o.x}
+            y={o.y}
+            className={`animate-float ${o.mobile ? "" : "max-md:hidden"}`}
+            style={{ animationDuration: `${7 + (i % 3)}s`, animationDelay: `${-i * 1.3}s` }}
+          >
             <Ornament name={o.name} size={o.size} />
           </Place>
         ))}

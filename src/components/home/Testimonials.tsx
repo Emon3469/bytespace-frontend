@@ -28,7 +28,7 @@ export function Testimonials() {
       <Glow color="blue" opacity={0.24} className="top-[149px] left-[calc(50%-1162px)] size-[1137px]" />
 
       <div className="mx-auto w-[1204px] max-w-full max-lg:px-10 max-md:px-4">
-        <div className="flex items-end justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-6">
+        <div className="reveal flex items-end justify-between gap-10 max-lg:flex-col max-lg:items-start max-lg:gap-6">
           <h2
             id="testimonials-title"
             className="font-display w-[577px] max-w-full text-heading-m font-semibold text-black max-md:text-[32px]"
@@ -44,7 +44,7 @@ export function Testimonials() {
 
         <ul className="mt-[72px] grid grid-cols-[repeat(3,374px)] items-start gap-[41px] max-lg:mt-12 max-lg:grid-cols-2 max-lg:gap-6 max-md:grid-cols-1">
           {testimonials.map((t) => (
-            <li key={t.name}>
+            <li key={t.name} className="reveal">
               <figure className="flex flex-col gap-6 rounded-card bg-white p-6">
                 <Image
                   src={t.avatar}

@@ -17,6 +17,8 @@ type CourseCardProps = {
   headingLevel?: "h3" | "h4";
   /** Mark as decorative (auth illustrations) so it is skipped by assistive tech. */
   decorative?: boolean;
+  /** Subtle hover lift for cards in the catalog grid. */
+  interactive?: boolean;
 };
 
 export function CourseCard({
@@ -26,6 +28,7 @@ export function CourseCard({
   className,
   headingLevel: Heading = "h3",
   decorative = false,
+  interactive = false,
 }: CourseCardProps) {
   const relaxed = variant === "showcase";
   const pillText = cn("font-sans text-label-xs font-medium text-neutral-700", relaxed && "leading-5");
@@ -35,6 +38,8 @@ export function CourseCard({
       aria-hidden={decorative || undefined}
       className={cn(
         "relative flex h-[384px] w-[373px] flex-col overflow-hidden rounded-card border border-gray-200 bg-white p-[15px]",
+        interactive &&
+          "transition-[translate,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_18px_40px_-16px_rgb(0_59_226/0.25)]",
         className,
       )}
     >
