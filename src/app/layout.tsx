@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import { siteUrl } from "@/lib/site-url";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -23,17 +24,33 @@ const satoshi = localFont({
 const clashDisplay = localFont({
   variable: "--font-clash-display",
   display: "swap",
-  src: [{ path: "../fonts/ClashDisplay-Bold.woff2", weight: "700", style: "normal" }],
+  src: [
+    {
+      path: "../fonts/ClashDisplay-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "ByteSpace — Get Access to Hundreds of Courses",
     template: "%s | ByteSpace",
   },
   description:
     "Unlock your creativity, gain valuable knowledge, and grow your business with ByteSpace's wide range of courses.",
+  applicationName: "ByteSpace",
+  openGraph: {
+    type: "website",
+    siteName: "ByteSpace",
+    url: "/",
+    title: "ByteSpace — Get Access to Hundreds of Courses",
+    description:
+      "Unlock your creativity, gain valuable knowledge, and grow your business with ByteSpace's wide range of courses.",
+  },
+  twitter: { card: "summary_large_image" },
 };
 
 export const viewport: Viewport = {
